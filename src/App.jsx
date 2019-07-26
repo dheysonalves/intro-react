@@ -14,8 +14,7 @@ class App extends React.Component {
 
     this.handleButtonClicked = this.handleButtonClicked.bind(this);
     this.addAssignment = this.addAssignment.bind(this);
-    /*Uncomment the line below for step 3*/
-    /*this.addStudent = this.addStudent.bind(this);*/
+    this.addStudent = this.addStudent.bind(this);
     this.addGrade = this.addGrade.bind(this);
   }
 
@@ -32,7 +31,11 @@ class App extends React.Component {
     });
   }
 
-  /*Write an addStudent function here for step 3*/
+  addStudent(studentName) {
+    this.setState({
+      student: this.state.student.concat(studentName)
+    });
+  }
 
   addGrade(assignment, student, score) {
     let grades = this.state.grades;
